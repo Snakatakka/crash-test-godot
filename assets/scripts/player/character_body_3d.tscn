@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cg5atj06p0wym"]
 
-[ext_resource type="Script" uid="uid://b38uchvwfslea" path="res://assets/scripts/player/playermovement.gd" id="1_fb3t6"]
-[ext_resource type="Texture2D" uid="uid://cx8hedwy1uqbo" path="res://icon.svg" id="2_vd578"]
+[ext_resource type="Script" uid="uid://d32qwxebdxf5u" path="res://assets/scripts/player/character_body_3d.gd" id="1_k65m7"]
+[ext_resource type="Texture2D" uid="uid://cx8hedwy1uqbo" path="res://icon.svg" id="2_vjvo8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7tqt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vd578")
+"texture": ExtResource("2_vjvo8")
 }],
 "loop": true,
 "name": &"default",
@@ -19,7 +19,7 @@ radius = 0.77978516
 height = 1.7307129
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-script = ExtResource("1_fb3t6")
+script = ExtResource("1_k65m7")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c7tqt")
@@ -29,6 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00012207031, 0)
 shape = SubResource("CapsuleShape3D_nl27k")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.78488946)
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 0.95705175, 0.28991723, 0, -0.28991723, 0.95705175, 0, 0.8783823, 2.0870922)

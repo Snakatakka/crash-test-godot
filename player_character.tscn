@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmcugbkp54tpn"]
+
+[ext_resource type="Script" uid="uid://cw25v3exs52q7" path="res://player_character.gd" id="1_5up26"]
+[ext_resource type="Texture2D" uid="uid://cx8hedwy1uqbo" path="res://icon.svg" id="2_4akcp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hvvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4akcp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5up26"]
+radius = 0.9082031
+height = 1.8164063
+
+[node name="Player_Character" type="CharacterBody3D"]
+script = ExtResource("1_5up26")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0hvvw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9923923, 0.12311652, 0, -0.12311652, 0.9923923, 0, 0.86044025, 1.8515031)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06628418, 0)
+shape = SubResource("CapsuleShape3D_5up26")
