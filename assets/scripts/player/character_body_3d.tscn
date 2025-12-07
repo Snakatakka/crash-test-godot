@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cg5atj06p0wym"]
 
 [ext_resource type="Script" uid="uid://d32qwxebdxf5u" path="res://assets/scripts/player/character_body_3d.gd" id="1_k65m7"]
-[ext_resource type="Texture2D" uid="uid://cx8hedwy1uqbo" path="res://icon.svg" id="2_vjvo8"]
+[ext_resource type="Texture2D" uid="uid://cx8hedwy1uqbo" path="res://images/sprites/player/icon.svg" id="2_vjvo8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7tqt"]
 animations = [{
@@ -11,6 +11,54 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vjvo8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vjvo8")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vjvo8")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vjvo8")
+}],
+"loop": true,
+"name": &"jump_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vjvo8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vjvo8")
+}],
+"loop": true,
+"name": &"walk_up",
 "speed": 5.0
 }]
 
@@ -23,6 +71,15 @@ script = ExtResource("1_k65m7")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c7tqt")
+animation = &"jump"
+
+[node name="Sprite" type="AnimatedSprite3D" parent="Sprite"]
+sprite_frames = SubResource("SpriteFrames_c7tqt")
+animation = &"jump_up"
+
+[node name="Sprite" type="AnimatedSprite3D" parent="Sprite/Sprite"]
+sprite_frames = SubResource("SpriteFrames_c7tqt")
+animation = &"idle_up"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00012207031, 0)
@@ -32,4 +89,5 @@ shape = SubResource("CapsuleShape3D_nl27k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.78488946)
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.95705175, 0.28991723, 0, -0.28991723, 0.95705175, 0, 0.8783823, 2.0870922)
+transform = Transform3D(1, 0, 0, 0, 0.99923044, 0.039224952, 0, -0.039224952, 0.99923044, 0, 0.8783823, 2.0870922)
+fov = 81.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlaq3f3hiu07f"
-path="res://.godot/imported/godotwaka.png-ef0518417b4f997d237759e5551dd05d.ctex"
+uid="uid://d3de2vyfkjg7n"
+path="res://.godot/imported/super_circle_man.png-7bb3d8528b441d5f041022115b69c201.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/godotwaka.png"
-dest_files=["res://.godot/imported/godotwaka.png-ef0518417b4f997d237759e5551dd05d.ctex"]
+source_file="res://images/sprites/player/super_circle_man.png"
+dest_files=["res://.godot/imported/super_circle_man.png-7bb3d8528b441d5f041022115b69c201.ctex"]
 
 [params]
 
